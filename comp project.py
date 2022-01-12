@@ -2,13 +2,14 @@
 from tkinter import*
 from tkinter import ttk
 import mysql.connector
-connection=mysql.connector.connect(host='localhost',user='root',password='munich24',database='computerproject')
-cursor=connection.cursor()
+
+
 def screen1():
     global root
     root=Tk()
     root.title("Car Rental Management System")
     root.geometry("1200x800")
+    root.configure(bg="grey")
     headingFrame1 = Frame(root,bg="#FFBB00",bd=5)
     headingFrame1.place(relx=0.2,rely=0.1,relwidth=0.6,relheight=0.16)
     headingLabel = Label(headingFrame1, text="Welcome to Bon Voyage Rentals!", bg='black', fg='white', font=('Courier',25))
@@ -27,6 +28,7 @@ def rent():
     global screen2
     screen2=Tk()
     screen2.geometry("1200x800")
+    screen2.configure(bg="grey")
     screen2.title("Car Rentals")
     lb2=Label(screen2,text="Please fill in your specifications",bg="black",fg="white",font=("Segoe Print",20,'bold')).place(relx=0.33,rely=0.01)
     lb3=Label(screen2,text="Seater capacty",bg="black", fg="white",font=("Arial",15,'bold')).place(relx=0.03, rely=0.08)
@@ -62,14 +64,23 @@ def returns():
     #root.destroy()
     screen3=Tk()
     screen3.geometry("1200x800")
+    screen3.configure(bg="grey")
     screen3.title("Car Returns")
     lbb=Label(screen3,text="Return a car",bg="black",fg="white",font=("arial",25,'bold')).place(relx=0.44, rely=0.1)
 
     def show():
+        global z  
+        z=cars.get()
+        global y
+        y=area.get()
         mylabel=Label(screen3,text= "You returned a "+cars.get()+" at "+area.get() ,font=('Calibri',20,'bold'),fg="white",bg="black").place(relx=0.32,rely=0.7)
-
+        mydb = mysql.connector.connect(host="localhost",user="root",password="munich24",database="computerproject")
+        cursor=mydb.cursor()
+        cursor.execute("INSERT INTO cars(carname,pickup)  values(%s,%s)", (z,y))
+        mydb.commit()
+   
     cars=StringVar()
-    cars.set("WagonR")
+
     area=StringVar()
 
     drop=OptionMenu(screen3,cars,"WagonR","Honda City","Swift Dzire","Innova","Xylo","Creta","i20","Jeep Compass","Corolla Altis","Verna","Astar","Duster","i10","Fortuner").place(relx=0.28,rely=0.3,relwidth=0.05 ,relheight=0.05)
