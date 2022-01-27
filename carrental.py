@@ -86,7 +86,7 @@ def deselect():
     cb4.deselect()
 
 def pickup():
-    global screen5
+    global screen5,screen4
     screen5=Toplevel(screen4)
     global var5,var6,var7,var8,var9,var10
     var5,var6,var7,var8,var9,var10=IntVar(screen5),IntVar(screen5),IntVar(screen5),IntVar(screen5),IntVar(screen5),IntVar(screen5),
@@ -104,14 +104,14 @@ def pickup():
     btn3= Button(screen5, text= "OK",command=show, font=('Calibri',15)).place(relx=0.9,rely=0.8) 
     screen5.mainloop()
 def driver():
-    global screen6
+    global screen6,screen4
     screen6= Toplevel(screen4)
     global var11,var12
     var11,var12=IntVar(screen6),IntVar(screen6)
     screen6.title("With/Without Driver")
     screen6.geometry("600x400")
     bg4=PhotoImage(file=r"C:\Users\91855\Desktop\Carrental\image9.png")
-    my_label4=Label(screen5,image=bg4).pack()
+    my_label4=Label(screen6,image=bg4).pack()
 
     lb3=Label(screen6,text="Would you want a driver?",bg="black", fg="white",font=("Segoe Print",20,'bold')).place(relx=0.2, rely=0.01)
     cb11= Checkbutton(screen6,text="Yes", variable=var11,font=('Calibri',20,'bold')).place(relx=0.18, rely=0.3)
@@ -128,25 +128,25 @@ def price():
     bg5=PhotoImage(file=r"C:\Users\91855\Desktop\Carrental\image9.png")
     my_label5=Label(screen7,image=bg5).pack()
     lb4=Label(screen7,text="Choose your price range",bg="black", fg="white",font=("Segoe Print",20,'bold')).place(relx=0.22, rely=0.01)
-    cb13= Checkbutton(screen7,text="2000-3000", variable=var13,font=('Calibri',14,'bold')).place(relx=0.08, rely=0.3)
-    cb14= Checkbutton(screen7,text="3000-4000", variable=var14,font=('Calibri',14,'bold')).place(relx=0.08, rely=0.5)
-    cb15= Checkbutton(screen7,text="4000-5000", variable=var15,font=('Calibri',14,'bold')).place(relx=0.08, rely=0.7)
+    cb13= Checkbutton(screen7,text="2000-3000", variable=var13,font=('Calibri',14,'bold')).place(relx=0.40, rely=0.3)
+    cb14= Checkbutton(screen7,text="3000-4000", variable=var14,font=('Calibri',14,'bold')).place(relx=0.40, rely=0.5)
+    cb15= Checkbutton(screen7,text="4000-5000", variable=var15,font=('Calibri',14,'bold')).place(relx=0.40, rely=0.7)
     btn5= Button(screen7, text= "OK",command=show, font=('Calibri',15)).place(relx=0.9,rely=0.8)
     screen7.mainloop()
 def seater():
     global screen8
-    screen8=Toplevel()
+    screen8=Toplevel(screen4)
     global var16,var17,var18
     var16,var17,var18 =IntVar(screen8),IntVar(screen8),IntVar(screen8)
     screen8.title("Seater Capacity")
     screen8.geometry("600x400")
     bg6=PhotoImage(file=r"C:\Users\91855\Desktop\Carrental\image9.png")
-    my_label6=Label(screen7,image=bg6).pack()
+    my_label6=Label(screen8,image=bg6).pack()
 
     lb5=Label(screen8,text="Seater Capacity",bg="black", fg="white",font=("Segoe Print",20,'bold')).place(relx=0.3, rely=0.01)
-    cb16= Checkbutton(screen8,text="5-seater", variable=var16,font=('Calibri',14,'bold')).place(relx=0.08, rely=0.3)
-    cb17= Checkbutton(screen8,text="7-seater", variable=var17,font=('Calibri',14,'bold')).place(relx=0.08, rely=0.5)
-    cb18= Checkbutton(screen8,text="8-seater", variable=var18,font=('Calibri',14,'bold')).place(relx=0.08, rely=0.7)
+    cb16= Checkbutton(screen8,text="5-seater", variable=var16,font=('Calibri',14,'bold')).place(relx=0.40, rely=0.3)
+    cb17= Checkbutton(screen8,text="7-seater", variable=var17,font=('Calibri',14,'bold')).place(relx=0.40, rely=0.5)
+    cb18= Checkbutton(screen8,text="8-seater", variable=var18,font=('Calibri',14,'bold')).place(relx=0.40, rely=0.7)
     btn5= Button(screen8, text= "OK",command=show, font=('Calibri',15)).place(relx=0.9,rely=0.8)
     screen8.main()
 #insert values into the window from MySQL table
