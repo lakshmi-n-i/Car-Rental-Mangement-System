@@ -31,15 +31,15 @@ def filters():
     lb1=Label(screen4,text="Select the filter you would like to apply",bg="black", fg="white",font=("Segoe Print",20,'bold')).place(relx=0.28, rely=0.01)
     global var1,var2,var3,var4,var18,cb1,cb2,cb3,cb4
     var1,var2,var3,var4,var18 =IntVar(screen4),IntVar(screen4),IntVar(screen4),IntVar(screen4),StringVar(screen4)
-    frame3=Frame(screen4,bg="black",bd=5).place(relx=0.08,rely=0.2,relwidth=0.25,relheight=0.4)
+   
 
-    cb1= Checkbutton(frame3,text="Pick-up Location",command=showfilter, variable=var1,font=('Segoe Print',14,'bold'))
+    cb1= Checkbutton(screen4,text="Pick-up Location",command=showfilter, variable=var1,font=('Segoe Print',14,'bold'))
     cb1.place(relx=0.12, rely=0.22)
-    cb2= Checkbutton(frame3,text="With/Without Driver", command=showfilter,variable=var2,font=('Segoe Print',14,'bold'))
+    cb2= Checkbutton(screen4,text="With/Without Driver", command=showfilter,variable=var2,font=('Segoe Print',14,'bold'))
     cb2.place(relx=0.12, rely=0.32)
-    cb3= Checkbutton(frame3,text="Price Range", command=showfilter,variable=var3,font=('Segoe Print',14,'bold'))
+    cb3= Checkbutton(screen4,text="Price Range", command=showfilter,variable=var3,font=('Segoe Print',14,'bold'))
     cb3.place(relx=0.12, rely=0.42)
-    cb4= Checkbutton(frame3,text="Seater Capacity", command=showfilter,variable=var4,font=('Segoe Print',14,'bold'))
+    cb4= Checkbutton(screen4,text="Seater Capacity", command=showfilter,variable=var4,font=('Segoe Print',14,'bold'))
     cb4.place(relx=0.12, rely=0.52)
     
     #Assign the width, minwidth, and anchor to the respective columns
