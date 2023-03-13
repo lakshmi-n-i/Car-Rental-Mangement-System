@@ -2,7 +2,7 @@
 from tkinter import*
 from tkinter import ttk
 import mysql.connector
-connection=mysql.connector.connect(host='localhost',user='vaidu',password='vaiducomp',database='sem1proj')
+connection=mysql.connector.connect(host='localhost',user='****',password='****',database='sem1proj')
 cursor=connection.cursor()
 def screen1():
     global root
